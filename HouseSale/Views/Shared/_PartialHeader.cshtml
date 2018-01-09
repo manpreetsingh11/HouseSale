@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "Agent Profile";
+}
+
+<header id="header" class="c-header">
+    <div class="l-row l-row--logo h-clearfix">
+        <div class="c-header__logo">
+            <a href="index.html">
+                <span class="c-header__logo-icon"></span>
+                <span class="c-header__logo-txt">Houses.Forsale</span>
+            </a>
+        </div>
+        <div class="c-header__login">
+            <div class="c-header__login-toggle h-clearfix">
+                <div class="c-header__login-icon">
+                    <div class="c-header__login-avatar">
+                        <img src="images/agents/agent1.png" alt="">
+                        <span class="c-header__user-notices c-header__user--has-notices">1</span>
+                    </div>
+                </div>
+                <div class="c-header__login-btn">
+                    <span class="c-header__login-txt">Login</span>
+                    <span class="c-header__login-carrot"></span>
+                    <span class="c-header__login-close l-close-btn"></span>
+                </div>
+            </div>
+            <div class="l-dropdown l-dropdown--login">
+                <form class="l-form l-login-form">
+                    <div class="l-form__holder">
+                        <div class="l-form__inner">
+                            <div class="l-form-row">
+                                <div class="l-form-group">
+                                    <input type="email" class="l-form-control" id="inputEmailDropdown" required>
+                                    <label for="inputEmailDropdown" class="l-form-label">email</label>
+                                    <span class="l-form-control-focus"></span>
+                                </div>
+                            </div>
+                            <div class="l-form-row">
+                                <div class="l-form-group">
+                                    <input type="password" class="l-form-control" id="inputPasswordDropdown" required>
+                                    <label for="inputPasswordDropdown" class="l-form-label">password</label>
+                                    <span class="l-form-control-focus"></span>
+                                    <a href="#" class="l-form-link">Forgot Password?</a>
+                                </div>
+                            </div>
+                            <div class="l-form-row l-form-row--submit l-row--center">
+                                <button type="submit" class="l-btn l-btn-primary">Sign in</button>
+                                <div class="l-form-text">
+                                    <a href="#" class="l-form-link">Create an Account</a>
+                                </div>
+                            </div>
+                            <div class="l-form-row l-form-row--login-social">
+                                <div class="l-divider l-divider--form l-divider--light"><span>or</span></div>
+                                <div class="l-form-buttons">
+                                    <button type="button" class="l-btn l-btn-login l-btn-login--facebook">Sign in with Facebook</button>
+                                    <button type="button" class="l-btn l-btn-login l-btn-login--google">Sign in with Google</button>
+                                    <button type="button" class="l-btn l-btn-login l-btn-login--microsoft">Sign in with Microsoft</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <ul class="l-dropdown l-dropdown--user-menu">
+                <li class="notices">
+                    <a href="#"><span class="c-header__user-notices c-header__user--has-notices">1</span> Notices</a>
+                </li>
+                <li>
+                    <a href="#">Account Settings</a>
+                </li>
+                <li>
+                    <a href="#">Saved Searches</a>
+                </li>
+                <li>
+                    <a href="#">Viewed Homes</a>
+                </li>
+                <li>
+                    <a href="#">Favorited Homes</a>
+                </li>
+                <li>
+                    <a href="#">Log Out</a>
+                </li>
+            </ul>
+        </div>
+        <div class="c-header__nav">
+            <ul class="h-clearfix">
+                <li class="has-dropdown">
+                    <span>Buy</span>
+                    <ul class="l-dropdown l-dropdown--left">
+                        <li class="user-location">
+                            84004 - Alpine
+                        </li>
+                        <li>
+                            <a href="#">All Homes</a>
+                        </li>
+                        <li>
+                            <a href="#">New Construction</a>
+                        </li>
+                        <li>
+                            <a href="#">Forclosures</a>
+                        </li>
+                        <li>
+                            <a href="#">Land</a>
+                        </li>
+                        <li>
+                            <a href="#">Recently Sold</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Sell</a>
+                </li>
+                <li>
+                    <a href="#">Neighborhood</a>
+                </li>
+                <li>
+                    <a href="#">Mortgage</a>
+                </li>
+                <li class="has-dropdown">
+                    <span>Agents</span>
+                    <ul class="l-dropdown l-dropdown--right">
+                        <li>
+                            <a href="#">Looking for an Agent</a>
+                        </li>
+                        <li>
+                            <a href="#">Advertising Solutions</a>
+                        </li>
+                        <li>
+                            <a href="#">Create Agent Profile</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+

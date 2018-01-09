@@ -1,0 +1,375 @@
+﻿@{
+    var AgentProfile = ViewBag.AgentProfile;
+    var ActiveHouse = ViewBag.lstAHouse;
+    var PastSale = ViewBag.lstPastSale;
+    var PersonReview = ViewBag.ARBP;
+}
+
+<div id="content" class="c-content">
+    <div class="c-content__wrap">
+        <div class="l-container">
+            <div class="c-content__agent-profile h-clearfix">
+                <div class="c-content__agent-overview l-col l-col-8">
+                    @{
+                        <div class="c-content__agent-card">
+                            <h1>@AgentProfile.name</h1>
+                            <div class="c-content__agent-profile-photo">
+                                <img src="@Url.Content(AgentProfile.imagePath)" alt="">
+                            </div>
+                            <div class="c-content__rating c-content__rating--agent">
+                                <div class="c-content__rating-stars">
+                                    <span class="c-content__rating-star c-content__rating-star--full"></span>
+                                    <span class="c-content__rating-star c-content__rating-star--full"></span>
+                                    <span class="c-content__rating-star c-content__rating-star--full"></span>
+                                    <span class="c-content__rating-star c-content__rating-star--full"></span>
+                                    <span class="c-content__rating-star c-content__rating-star--half-full"></span>
+                                </div>
+                                <div class="c-content__rating-info">
+                                    <div class="c-content__rating-average">@AgentProfile.totalRating</div>
+                                    <a href="#" class="c-content__agent-review-count">@AgentProfile.totalReviews</a>
+                                </div>
+                            </div>
+                            <div class="c-content__skill-bars c-content__skill-bars--agent">
+                                @{
+                                    foreach (var item in AgentProfile.lstSkills)
+                                    {
+
+
+                                        <div class="c-content__skill-bar">
+                                            <div class="c-content__skill-bar-title">@item.skill</div>
+                                            <div class="c-content__skill-bar-average">@item.rating</div>
+                                            <div class="c-content__skill-bar-row--default">
+                                                <div class="c-content__skill-bar-row" style="width:90%;"></div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                        <div class="c-content__agent-desc">
+                            <h4 class="l-border">About</h4>
+                            <p>
+                                @AgentProfile.about
+                            </p>
+                            <p class="l-small">
+                                <strong>Brokerage:</strong> @AgentProfile.brokerage
+                            </p>
+                            <p class="l-small">
+                                <strong>Specialties:</strong> @AgentProfile.specialties
+                            </p>
+                            <p class="l-small">
+                                <strong>License Number(s):</strong> @AgentProfile.licenseNumber
+                            </p>
+                        </div>
+                    }
+                </div>
+                <div class="c-content__agent-form l-col l-col-4">
+                    <div class="l-box l-box--contact-agent">
+                        <form class="l-form l-contact-agent-form">
+                            <div class="l-form__holder">
+                                <h5>Contact Melissa</h5>
+                                <div class="l-form__inner">
+                                    <div class="l-form-row h-clearfix">
+                                        <div class="l-form-group">
+                                            <input type="text" class="l-form-control" id="inputFirstName_ContactAgentForm" required>
+                                            <label for="inputFirstName_ContactAgentForm" class="l-form-label">first name</label>
+                                            <span class="l-form-control-focus"></span>
+                                        </div>
+                                    </div>
+                                    <div class="l-form-row h-clearfix">
+                                        <div class="l-form-group">
+                                            <input type="text" class="l-form-control" id="inputLastName_ContactAgentForm" required>
+                                            <label for="inputLastName_ContactAgentForm" class="l-form-label">last name</label>
+                                            <span class="l-form-control-focus"></span>
+                                        </div>
+                                    </div>
+                                    <div class="l-form-extra demo">
+                                        <div class="l-form-row h-clearfix">
+                                            <div class="l-form-group">
+                                                <input type="email" class="l-form-control" id="inputEmail_ContactAgentForm" required>
+                                                <label for="inputEmail_ContactAgentForm" class="l-form-label">email</label>
+                                                <span class="l-form-control-focus"></span>
+                                            </div>
+                                        </div>
+                                        <div class="l-form-row h-clearfix">
+                                            <div class="l-form-group">
+                                                <input type="text" class="l-form-control" id="inputPhone_ContactAgentForm" required>
+                                                <label for="inputPhone_ContactAgentForm" class="l-form-label">phone</label>
+                                                <span class="l-form-control-focus"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="l-form-row h-clearfix">
+                                        <div class="l-form-group l-form-group--textarea">
+                                            <textarea class="l-form-control" id="areaComment_ContactAgentForm" required></textarea>
+                                            <label for="areaComment_ContactAgentForm" class="l-form-label">comment</label>
+                                            <span class="l-form-control-focus"></span>
+                                        </div>
+                                    </div>
+                                    <div class="l-form-row l-form-row--submit l-row--center">
+                                        <button type="submit" class="l-btn l-btn-primary">Submit</button>
+                                        <div class="l-form__buttons h-clearfix">
+                                            <a href="#" class="l-btn l-btn--action l-btn--gray">Call</a>
+                                            <a href="#" class="l-btn l-btn--action l-btn--gray">Leave Review</a>
+                                        </div>
+                                        <div class="l-form-text">
+                                            <a href="#">www.crosbyrealestate.com</a>
+                                        </div>
+                                        <ul class="l-list l-list--social c-content__agent-form-social">
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <span class="l-list--social__icon">
+                                                        <img src="@Url.Content("~/Content/house/images/social/icon-twitter-agent.svg")" alt="">
+                                                    </span>
+                                                    <span class="l-list--social__icon--hover">
+                                                        <img src="@Url.Content("~/Content/house/images/social/icon-twitter-agent-dark.svg")" alt="">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <span class="l-list--social__icon">
+                                                        <img src="@Url.Content("~/Content/house/images/social/icon-facebook-agent.svg")" alt="">
+                                                    </span>
+                                                    <span class="l-list--social__icon--hover">
+                                                        <img src="@Url.Content("~/Content/house/images/social/icon-facebook-agent-dark.svg")" alt="">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <span class="l-list--social__icon">
+                                                        <img src="@Url.Content("~/Content/house/images/social/icon-linkedin-agent.svg")" alt="">
+                                                    </span>
+                                                    <span class="l-list--social__icon--hover">
+                                                        <img src="@Url.Content("~/Content/house/images/social/icon-linkedin-agent-dark.svg")" alt="">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="l-divider l-divider--big"></div>
+            <h3>Active Listings</h3>
+            <div class="c-content__property c-content__property--related">
+                @{
+                    foreach (var item in ActiveHouse)
+                    {
+                        <div class="c-content__property-item">
+                            <a href="#">
+                                <div class="c-content__property-main">
+                                    <div class="c-content__property-image">
+                                        <img src="@Url.Content(item.imagePath)" alt="">
+                                    </div>
+                                    <div class="c-content__property-price h-clearfix">
+                                        <div class="c-content__property-price-current">
+                                            $@item.price
+                                        </div>
+                                        <div class="c-content__property-price-changes c-content__property-price-changes--up">
+                                            <span class="value">@item.currentMarket</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-content__property-desc">
+                                    <div class="c-content__property-info h-clearfix">
+                                        <div class="c-content__property-address">
+                                            @item.address
+                                        </div>
+                                        <div class="c-content__property-photos">
+                                            <span>×</span> @item.totalPics
+                                        </div>
+                                    </div>
+                                    <div class="c-content__property-features h-clearfix">
+                                        <div class="c-content__property-feature c-content__property-feature--beds">
+                                            @item.beds
+                                        </div>
+                                        <div class="c-content__property-feature c-content__property-feature--bath">
+                                            @item.bath
+                                        </div>
+                                        <div class="c-content__property-feature c-content__property-feature--sqft">
+                                            @item.sqft
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="c-content__property-favorite"></div>
+                        </div>
+                    }
+                }
+
+            </div>
+
+            <div class="l-row l-row--center">
+                <a class="l-btn l-btn-more l-btn-more--arrow-changeable" href="#"><span class="h-hide-on-mobile">See </span>More</a>
+            </div>
+            <div class="l-divider l-divider--big"></div>
+            <h3>Past Sales</h3>
+            <div class="c-content__homes">
+                <div class="c-content__homes-row">
+                    <div class="c-content__homes-col c-content__homes-col--property">
+                        Property
+                    </div>
+                    <div class="c-content__homes-col c-content__homes-col--details">
+                        Details
+                    </div>
+                    <div class="c-content__homes-col c-content__homes-col--represented">
+                        Represented
+                    </div>
+                    <div class="c-content__homes-col c-content__homes-col--price">
+                        Price
+                    </div>
+                </div>
+
+                @{
+                    foreach (var item in PastSale)
+                    {
+
+
+                        <div class="c-content__homes-row">
+                            <div class="c-content__homes-col c-content__homes-col--property">
+                                <div class="c-content__homes-property-photo">
+                                    <img src="@Url.Content(item.imagePath)" alt="">
+                                </div>
+                            </div>
+                            <div class="c-content__homes-col c-content__homes-col--details">
+                                <span class="c-content__homes-price">$@item.price</span>
+                                <span class="c-content__homes-location">@item.location</span>
+                                <span class="c-content__homes-address">@item.address</span>
+                                <span class="c-content__homes-info">@item.info</span>
+                                <span class="c-content__homes-date">Sold date: @item.date</span>
+                            </div>
+                            <div class="c-content__homes-col c-content__homes-col--represented">
+                                @item.represented
+                            </div>
+                            <div class="c-content__homes-col c-content__homes-col--price">
+                                $@item.price
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+            <ul class="l-list l-list--pagination h-hide-on-tablet">
+                <li class="l-list__pagination-control l-list__pagination-control--prev l-list__pagination-control--disabled">
+                    <a href="#"></a>
+                </li>
+                <li class="l-list__pagination-pages">
+                    <span class="l-list-pagination__current">1</span>
+                    <span class="l-list-pagination__pages-count">32</span>
+                </li>
+                <li class="l-list__pagination-control l-list__pagination-control--next">
+                    <a href="#"></a>
+                </li>
+            </ul>
+            <div class="l-row l-row--center h-hide-on-desktop">
+                <a class="l-btn l-btn-more l-btn-more--arrow-down" href="#"><span class="h-hide-on-mobile">See </span>More</a>
+            </div>
+            <div class="l-divider l-divider--big"></div>
+            <h3>Ratings &amp; Reviews</h3>
+            <div class="c-content__filter c-content__filter--reviews h-clearfix">
+                <div class="l-col l-col-4 l-col-xs-6">
+                    <select class="l-form-control l-form-select l-form-elem-custom" id="reviewType_ReviewFilter">
+                        <option>All reviews (16)</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="l-col l-col-4 l-col-xs-6">
+                    <select class="l-form-control l-form-select l-form-elem-custom" id="reviewOrder_ReviewFilter">
+                        <option>Newest first</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="l-col l-col-4 h-hide-on-mobile">
+                    <button type="button" class="l-btn l-btn--action l-btn--blue">Write a Review</button>
+                </div>
+            </div>
+            <div class="c-content__reviews">
+                @{
+                    foreach (var item in PersonReview)
+                    {
+
+
+                        <div class="c-content__review-item">
+                            <div class="c-content__review-summary">
+                                <div class="c-content__review-info">
+                                    <div class="c-content__review-date">
+                                        @item.date
+                                    </div>
+                                    <div class="c-content__review-meta h-show-on-mobile">
+                                        <div class="c-content__review-author">
+                                            Reviewed by: @item.name
+                                        </div>
+                                        <div class="c-content__review-home">
+                                            @item.address
+                                        </div>
+                                    </div>
+                                    <div class="c-content__rating c-content__rating--review">
+                                        <div class="c-content__rating-stars">
+                                            <span class="c-content__rating-star c-content__rating-star--full"></span>
+                                            <span class="c-content__rating-star c-content__rating-star--full"></span>
+                                            <span class="c-content__rating-star c-content__rating-star--full"></span>
+                                            <span class="c-content__rating-star c-content__rating-star--full"></span>
+                                            <span class="c-content__rating-star c-content__rating-star--half-full"></span>
+                                        </div>
+                                        <div class="c-content__rating-info">
+                                            <div class="c-content__review-average">@item.rating</div>
+                                        </div>
+                                    </div>
+                                    <div class="c-content__review-meta h-hide-on-mobile">
+                                        <div class="c-content__review-author">
+                                            Reviewed by: @item.name
+                                        </div>
+                                        <div class="c-content__review-home">
+                                            @item.address
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-content__skill-bars c-content__skill-bars--review">
+                                    @{
+                                        foreach (var itemm in AgentProfile.lstSkills)
+                                        {
+                                            <div class="c-content__skill-bar">
+                                                <div class="c-content__skill-bar-title">@itemm.skill</div>
+                                                <div class="c-content__skill-bar-average">@itemm.rating</div>
+                                                <div class="c-content__skill-bar-row--default">
+                                                    <div class="c-content__skill-bar-row" style="width:90%;"></div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+
+                                </div>
+                            </div>
+                            <div class="c-content__review-content">
+                                @item.review
+                            </div>
+                        </div>
+                                        }
+                }
+            </div>
+            <div class="c-content__copyright c-content__copyright--zillow">
+                <div class="c-content__logo-copyright">
+                    <a href="#">Zillow</a>
+                </div>
+                <p>
+                    &copy; Zillow, Inc., 2006-2016. Use is subject to <a href="#">Terms of Use</a>
+                </p>
+                <p>
+                    <a href="#">What's a Zestimate?</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

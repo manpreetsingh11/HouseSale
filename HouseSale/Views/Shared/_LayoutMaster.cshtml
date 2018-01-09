@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <!-- Title to your website -->
+    <title>@ViewBag.Title</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.html">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/house/css/normalize.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/house/css/jquery.formstyler.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/house/css/jquery.formstyler.theme.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/house/css/slick.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/house/css/slick-theme.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/house/css/style.css")">
+
+    <!-- Gotham Fonts -->
+    <link rel="stylesheet" type="text/css" href="../../cloud.typography.com/6744776/6682792/css/fonts.css" />
+
+</head>
+<body>
+    <!--==============================Header=================================-->
+    @Html.Partial("_PartialHeader")
+    <button type="button" class="c-header__nav-toggle">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="c-header__nav-close l-close-btn"></span>
+    </button>
+    <!--==============================Content================================-->
+    @RenderBody()
+    <!--==============================Footer================================-->
+    @Html.Partial("_PartialFooter")
+    <!--==============================Mobile================================-->
+    @Html.Partial("_PartialMobileNavigation")
+
+    <!--======================== JavaScript ==================================-->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="@Url.Content("~/Content/house/js/jquery-1.12.3.min.js")"></script>
+    <script src="../../cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="@Url.Content("~/Content/house/js/jquery.formstyler.min.js")"></script>
+    <script src="@Url.Content("~/Content/house/js/slick.min.js")"></script>
+    <script src="@Url.Content("~/Content/house/js/Chart.bundle.min.js")"></script>
+    <script src="@Url.Content("~/Content/house/js/custom.js")"></script>
+    <script src="@Url.Content("~/Content/house/js/ie10-viewport-bug-workaround.js")"></script>
+
+
+</body>
+</html>

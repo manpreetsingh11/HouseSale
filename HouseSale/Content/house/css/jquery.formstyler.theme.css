@@ -1,0 +1,311 @@
+/*---------------------------------------- 
+			Checkbox
+---------------------------------------- */
+.jq-checkbox {
+	cursor:pointer;
+	width:21px;
+	height:21px;
+	margin:0 9px 0 0;
+	background:#fff;
+	border:2px solid #ddd;
+	vertical-align:top;
+	position:relative;
+}
+@media (min-width: 1024px) {
+	.jq-checkbox {
+		width:12px;
+		height:12px;
+		border-width:1px;
+	}
+}
+.jq-checkbox.disabled,
+.jq-radio.disabled {
+	opacity: .55;
+}
+.jq-checkbox {
+	border-radius:3px;
+}
+.jq-checkbox.checked {
+	background-color:#57c1e8;
+	border-color:#57c1e8;
+}
+	
+.jq-checkbox.checked .jq-checkbox__div {
+	display:block;
+	width:18px;
+	height:18px;
+	background:url(../images/checkbox-icon.svg) center center no-repeat;
+	background-size:17px 17px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-11px 0 0 -9px;
+}
+
+@media (min-width: 1024px) {
+	.jq-checkbox.checked .jq-checkbox__div {
+		width:10px;
+		height:10px;
+		background-size:10px 10px;
+		margin:-6px 0 0 -5px;
+	}
+}
+
+.l-dropdown-row--checkbox .jq-checkbox.checked {
+	background-color:#ccc;
+	border-color:#ccc;
+}
+/*---------------------------------------- 
+			Radio
+---------------------------------------- */
+.jq-radio {
+	cursor:pointer;
+	width:26px;
+	height:26px;
+	margin:0 auto;
+	background:#fff;
+	border:2px solid #ccc;
+	border-radius:100%;
+	position:relative;
+}
+.jq-radio.checked {
+	border-color:#57c1e8;
+}
+.jq-radio.checked .jq-radio__div {
+	width:20px;
+	height:20px;
+	border-radius:100%;
+	background:#57C1E8;
+	position:absolute;
+	left:3px;
+	top:3px;
+}
+
+@media (min-width: 768px) {
+	.jq-radio {
+		width:18px;
+		height:18px;
+	}
+	.jq-radio.checked .jq-radio__div {
+		width:14px;
+		height:14px;
+		left:2px;
+		top:2px;
+	}
+}
+
+/*---------------------------------------- 
+			Select
+---------------------------------------- */
+.jq-selectbox {
+	height:40px;
+	padding:0;
+	vertical-align:middle;
+	cursor:pointer;
+}
+	.jq-selectbox.opened {
+		z-index:20!important;
+	}
+	
+.jq-selectbox__select {
+	padding:10px 40px 10px 10px;
+	height:20px;
+	position:relative;
+}
+@media (min-width: 768px) {
+	.jq-selectbox__select {
+		padding:10px 36px 10px 19px;
+	}
+}
+
+.jq-selectbox__select-text {
+	display:block;
+	width:100%;
+}
+	
+.jq-selectbox .placeholder {
+	color: #ccc;
+}
+.jq-selectbox__trigger {
+	position:absolute;
+	top:0;
+	right:0;
+	width:36px;
+	height:100%;
+}
+@media (min-width: 375px) {
+	.jq-selectbox__trigger {
+		width:32px;
+	}
+}
+@media (min-width: 414px) {
+	.jq-selectbox__trigger {
+		width:36px;
+	}
+}
+.jq-selectbox__trigger-arrow {
+	width:9px;
+	height:9px;
+	border-bottom:2px solid #ccc;
+	border-right:2px solid #ccc;
+	position:absolute;
+	top:11px;
+	right:14px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+@media (min-width: 375px) {
+	.jq-selectbox__trigger-arrow {
+		right:10px;
+	}
+}
+@media (min-width: 414px) {
+	.jq-selectbox__trigger-arrow {
+		right:14px;
+	}
+}
+.jq-selectbox__dropdown {
+	font-size:15px;
+	line-height:20px;
+	color:#555;
+	font-family: 'Gotham SSm A', 'Gotham SSm B';
+	font-weight:400;
+	margin:2px -1px 0;
+	padding:0;
+	background:#fff;
+	border-radius:3px;
+	border:1px solid #ccc;
+	box-sizing: border-box;
+	left:0;
+	right:0;
+}
+.jq-selectbox ul {
+	margin:0;
+	padding:0;
+	max-height:200px;
+}
+.jq-selectbox li {
+	min-height:18px;
+	color:#555;
+	padding:5px 19px;	
+}
+.jq-selectbox li.selected,
+.jq-selectbox li:hover {
+	color:#555;
+	background-color:#f5f5f5;
+}
+
+/*---------------------------------------- 
+			Filter Dropdown Select
+---------------------------------------- */	
+.l-dropdown--filter .jq-selectbox,
+.l-dropdown--options .jq-selectbox {
+	height:30px;
+}
+	.l-dropdown--filter .jq-selectbox__select,
+	.l-dropdown--options .jq-selectbox__select {
+		padding:5px 40px 5px 10px;
+	}
+	.l-dropdown--filter .jq-selectbox__trigger-arrow,
+	.l-dropdown--options .jq-selectbox__trigger-arrow {
+		top:7px;
+		right:15px;
+	}
+			
+.l-dropdown--filter .jq-selectbox li,
+.l-dropdown--options .jq-selectbox li {
+	min-height:0;
+	font-size:12px;
+	line-height:15px;
+	color:#555;
+	padding:6px 10px;
+}
+
+.c-filters-area--mobile .l-dropdown--filter .jq-selectbox li {
+	font-size:16px;
+	line-height:22px;
+	color:#ccc;
+	padding:10px 10px;
+}
+
+.c-filters-area--mobile .jq-selectbox__select {
+	padding:12px 40px 12px 8px;
+}
+	.c-filters-area--mobile .jq-selectbox__select-text {
+		color:#ccc;
+		font-weight:400;
+	}
+	
+	.c-filters-area--mobile .jq-selectbox__trigger-arrow {
+		top:13px;
+	}
+/*---------------------------------------- 
+			Price Dropdown
+---------------------------------------- */			
+.l-dropdown--filter .l-form-control--number .jq-selectbox__select,
+.l-dropdown--options .l-form-control--number .jq-selectbox__select {
+	padding:5px 0
+}
+
+.l-dropdown--filter .l-form-control--number .jq-selectbox__dropdown,
+.l-dropdown--options .l-form-control--number .jq-selectbox__dropdown {
+	margin:0;
+	padding:9px 15px;
+	background:#fff;
+	border-radius:0 0 3px 3px;
+	border-top:none;
+}
+	.l-dropdown--filter .l-form-control--number .jq-selectbox__dropdown:before,
+	.l-dropdown--filter .l-form-control--number .jq-selectbox__dropdown:after,
+	.l-dropdown--options .l-form-control--number .jq-selectbox__dropdown:before,
+	.l-dropdown--options .l-form-control--number .jq-selectbox__dropdown:after {
+		display:block;
+		content:"";
+		width:1px;
+		height:1px;
+		background:#ccc;
+		position:absolute;
+		top:-1px;
+	}
+		.l-dropdown--filter .l-form-control--number .jq-selectbox__dropdown:before,
+		.l-dropdown--options .l-form-control--number .jq-selectbox__dropdown:before {
+			left:-1px;
+		}
+		.l-dropdown--filter .l-form-control--number .jq-selectbox__dropdown:after,
+		.l-dropdown--options .l-form-control--number .jq-selectbox__dropdown:after {
+			right:-1px;
+		}
+		
+.l-dropdown--filter .l-form-control--number.jq-selectbox li,
+.l-dropdown--options .l-form-control--number.jq-selectbox li {
+	border-top:1px solid #eee;
+}
+	.l-dropdown--filter .l-form-control--number.jq-selectbox li:first-child,
+	.l-dropdown--options .l-form-control--number.jq-selectbox li:first-child {
+		border-top:none;
+	}
+	
+.l-dropdown--filter .l-form-control--number.jq-selectbox li.selected,
+.l-dropdown--filter .l-form-control--number.jq-selectbox li:hover,
+.l-dropdown--options .l-form-control--number.jq-selectbox li.selected,
+.l-dropdown--options .l-form-control--number.jq-selectbox li:hover {
+	color:#555;
+	background-color:#f5f5f5;
+}
+/*---------------------------------------- 
+			File
+---------------------------------------- */	
+.jq-file {	
+}
+.jq-file input {
+	cursor: pointer;
+}
+.jq-file__name {
+	display:none;
+}
+.jq-file__browse {
+	position:relative;
+}
